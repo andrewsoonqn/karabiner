@@ -11,9 +11,9 @@
             "description": "Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [
               {
-                "description": "; -> Hyper Key",
+                "description": "Caps Lock -> Hyper Key",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "caps_lock",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -38,7 +38,7 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "semicolon"
+                    "key_code": "escape"
                   }
                 ],
                 "type": "basic"
@@ -2384,26 +2384,24 @@
             ]
           },
           {
-            "description": "Change CAPS to ESC, and CTRL when held",
+            "description": "Change Backspace to Spacebar when Minecraft is focused",
             "manipulators": [
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "key_code": "delete_or_backspace"
                 },
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
                 "to": [
                   {
-                    "key_code": "left_control"
+                    "key_code": "spacebar"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "file_paths": [
+                      "^/Users/mxstbr/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$"
+                    ]
                   }
                 ]
               }
