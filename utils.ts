@@ -211,3 +211,13 @@ export function window(name: string): LayerCommand {
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
 }
+
+export function shortcut(name: string): LayerCommand {
+    return {
+        to: [
+            {
+                shell_command: `shortcuts run \"${name}\"`
+            }
+        ]
+    };
+}
