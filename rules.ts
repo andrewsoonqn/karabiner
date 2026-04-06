@@ -180,16 +180,29 @@ const rules: KarabinerRules[] = [
           key_code: "spacebar",
           modifiers: { optional: ["any"] },
         },
-        to: [
-          {
-            key_code: "left_option",
-          },
-        ],
         to_if_alone: [
           {
-            key_code: "spacebar",
-          },
+            "key_code": "spacebar"
+          }
         ],
+        to_if_held_down: [
+          {
+            "key_code": "left_option",
+          }
+        ],
+        parameters: {
+          "basic.to_if_held_down_threshold_milliseconds": 150,
+        },
+        // to: [
+        //   {
+        //     key_code: "left_option",
+        //   },
+        // ],
+        // to_if_alone: [
+        //   {
+        //     key_code: "spacebar",
+        //   },
+        // ],
       },
     ],
   },
